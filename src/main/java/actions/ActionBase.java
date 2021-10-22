@@ -15,8 +15,12 @@ import constants.AttributeConst;
 import constants.ForwardConst;
 import constants.PropertyConst;
 
+/**
+ * 各Actionクラスの親クラス。共通処理を行う。
+ *
+ */
 public abstract class ActionBase {
-	protected ServletContext context;
+    protected ServletContext context;
     protected HttpServletRequest request;
     protected HttpServletResponse response;
 
@@ -67,7 +71,7 @@ public abstract class ActionBase {
 
             //発生した例外をコンソールに表示
             e.printStackTrace();
-          //commandの値が不正で実行できない場合エラー画面を呼び出し
+            //commandの値が不正で実行できない場合エラー画面を呼び出し
             forward(ForwardConst.FW_ERR_UNKNOWN);
         }
 
@@ -120,7 +124,7 @@ public abstract class ActionBase {
     protected boolean checkToken() throws ServletException, IOException {
 
         //パラメータからtokenの値を取得
-    	String _token = getRequestParam(AttributeConst.TOKEN);
+        String _token = getRequestParam(AttributeConst.TOKEN);
 
         if (_token == null || !(_token.equals(getTokenId()))) {
 

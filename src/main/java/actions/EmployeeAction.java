@@ -25,6 +25,9 @@ public class EmployeeAction extends ActionBase {
     @Override
     public void process() throws ServletException, IOException {
 
+        //新規登録画面を表示
+        forward(ForwardConst.FW_EMP_NEW);
+
         service = new EmployeeService();
 
         //メソッドを実行
@@ -62,6 +65,14 @@ public class EmployeeAction extends ActionBase {
         //一覧画面を表示
         forward(ForwardConst.FW_EMP_INDEX);
 
+    }
+    public void entryNew() throws ServletException, IOException {
+
+        putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
+        putRequestScope(AttributeConst.EMPLOYEE, new EmployeeView()); //空の従業員インスタンス
+
+        //新規登録画面を表示
+        forward(ForwardConst.FW_EMP_NEW);
     }
 
 }
