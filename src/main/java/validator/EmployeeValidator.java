@@ -3,8 +3,9 @@ package validator;
 import java.util.ArrayList;
 import java.util.List;
 
+import actions.views.EmployeeView;
 import constants.MessageConst;
-import views.EmployeeView;
+import services.EmployeeService;
 
 public class EmployeeValidator {
 	public static List<String> validate(

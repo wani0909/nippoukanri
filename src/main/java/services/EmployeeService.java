@@ -5,14 +5,14 @@ import java.util.List;
 
 import javax.persistence.NoResultException;
 
+import actions.views.EmployeeConverter;
+import actions.views.EmployeeView;
 import constants.JpaConst;
 import models.Employee;
 import utils.EncryptUtil;
 import validator.EmployeeValidator;
-import views.EmployeeConverter;
-import views.EmployeeView;
 
-public class EmployeeBase extends ServiceBase {
+public class EmployeeService extends ServiceBase {
 	public List<EmployeeView> getPerPage(int page) {
         List<Employee> employees = em.createNamedQuery(JpaConst.Q_EMP_GET_ALL, Employee.class)
                 .setFirstResult(JpaConst.ROW_PER_PAGE * (page - 1))
