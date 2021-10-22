@@ -19,7 +19,7 @@ import javax.servlet.annotation.WebListener;
 public class PropertiesListener implements ServletContextListener {
 
     /**
-     * Default constructor. 
+     * Default constructor.
      */
     public PropertiesListener() {
         // TODO Auto-generated constructor stub
@@ -28,14 +28,14 @@ public class PropertiesListener implements ServletContextListener {
 	/**
      * @see ServletContextListener#contextDestroyed(ServletContextEvent)
      */
-    public void contextDestroyed(ServletContextEvent sce)  { 
+    public void contextDestroyed(ServletContextEvent sce)  {
          // TODO Auto-generated method stub
     }
 
 	/**
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
-    public void contextInitialized(ServletContextEvent sce)  { 
+    public void contextInitialized(ServletContextEvent arg0)  {
     	ServletContext context = arg0.getServletContext();
 
         //プロパティファイルを読み込み、アプリケーションスコープに設定する
@@ -60,5 +60,5 @@ public class PropertiesListener implements ServletContextListener {
             e.printStackTrace();
         }
     }
-	
+
 }
