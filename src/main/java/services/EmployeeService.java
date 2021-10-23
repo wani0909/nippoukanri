@@ -9,8 +9,8 @@ import actions.views.EmployeeConverter;
 import actions.views.EmployeeView;
 import constants.JpaConst;
 import models.Employee;
+import models.validators.EmployeeValidator;
 import utils.EncryptUtil;
-import validator.EmployeeValidator;
 
 public class EmployeeService extends ServiceBase {
 	public List<EmployeeView> getPerPage(int page) {
