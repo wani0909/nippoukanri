@@ -17,7 +17,7 @@ import javax.servlet.annotation.WebFilter;
 public class EncodingFilter implements Filter {
 
     /**
-     * Default constructor. 
+     * Default constructor.
      */
     public EncodingFilter() {
         // TODO Auto-generated constructor stub
@@ -35,7 +35,7 @@ public class EncodingFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
-		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 
 		chain.doFilter(request, response);
 	}
